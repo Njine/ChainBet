@@ -6,7 +6,7 @@ const deployLottery: DeployFunction = async ({ getNamedAccounts, deployments }: 
   const { deployer } = await getNamedAccounts();
 
   // Deploy the LotteryToken contract
-  const token = await deploy("LotteryToken", {
+  const token = await deploy("almasiToken", {
     from: deployer,
     log: true,
   });
