@@ -1,0 +1,187 @@
+{
+  "address": "0x9D92Aa95E3B8d6353197714c2a1318AD2947c068",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_ticketPrice",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "buyTicket",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pickWinner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "players",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ticketPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x49c989e1648433cc2de9f29ddcb2388d1910359d0d30feb639a6b555a5df1f51",
+  "receipt": {
+    "to": null,
+    "from": "0x061E8199839100D0A03B2962AcEf71d721F5abd4",
+    "contractAddress": "0x9D92Aa95E3B8d6353197714c2a1318AD2947c068",
+    "transactionIndex": 27,
+    "gasUsed": "456320",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x20bfbf9748a6de94d394e31d7b6b14473742a8806dac1acb4155cedea067ecc3",
+    "transactionHash": "0x49c989e1648433cc2de9f29ddcb2388d1910359d0d30feb639a6b555a5df1f51",
+    "logs": [],
+    "blockNumber": 6759142,
+    "cumulativeGasUsed": "10101947",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x69b6c5d1aB632E3616E8d6E82dFEAA357D46cAfb",
+    100
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "4f1509b619c0094ddb7d419e49174deb",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_ticketPrice\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"buyTicket\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pickWinner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"players\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ticketPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/KadiLottery.sol\":\"KadiLottery\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(address from, address to, uint256 amount) external returns (bool);\\n}\\n\",\"keccak256\":\"0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305\",\"license\":\"MIT\"},\"contracts/KadiLottery.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\ncontract KadiLottery {\\n    IERC20 public token;\\n    address public admin;\\n    uint256 public ticketPrice;\\n    address[] public players;\\n\\n    constructor(address _token, uint256 _ticketPrice) {\\n        token = IERC20(_token);\\n        ticketPrice = _ticketPrice;\\n        admin = msg.sender;\\n    }\\n\\n    function buyTicket() external {\\n        require(token.transferFrom(msg.sender, address(this), ticketPrice), \\\"Transfer failed\\\");\\n        players.push(msg.sender);\\n    }\\n\\n    function pickWinner() external onlyAdmin {\\n        require(players.length > 0, \\\"No players in the lottery\\\");\\n        uint256 winnerIndex = random() % players.length;\\n        address winner = players[winnerIndex];\\n        uint256 balance = token.balanceOf(address(this));\\n        require(token.transfer(winner, balance), \\\"Transfer failed\\\");\\n        players = new address[](0); // Reset players\\n    }\\n\\n    function random() private view returns (uint256) {\\n        return uint256(keccak256(abi.encodePacked(block.prevrandao, block.timestamp, players)));\\n    }\\n\\n    modifier onlyAdmin() {\\n        require(msg.sender == admin, \\\"Only admin can call this\\\");\\n        _;\\n    }\\n}\\n\",\"keccak256\":\"0xdf198f5e36ddce635bc4862e2b2a2f7a99efb2be4c0b7463cba998cda3e96c5d\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516106b43803806106b483398101604081905261002f91610060565b600080546001600160a01b039093166001600160a01b0319938416179055600255600180549091163317905561009a565b6000806040838503121561007357600080fd5b82516001600160a01b038116811461008a57600080fd5b6020939093015192949293505050565b61060b806100a96000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80631209b1f6146100675780635d495aea14610083578063edca914c1461008d578063f71d96cb14610095578063f851a440146100c0578063fc0c546a146100d3575b600080fd5b61007060025481565b6040519081526020015b60405180910390f35b61008b6100e6565b005b61008b610317565b6100a86100a33660046104f2565b610418565b6040516001600160a01b03909116815260200161007a565b6001546100a8906001600160a01b031681565b6000546100a8906001600160a01b031681565b6001546001600160a01b031633146101455760405162461bcd60e51b815260206004820152601860248201527f4f6e6c792061646d696e2063616e2063616c6c2074686973000000000000000060448201526064015b60405180910390fd5b6003546101945760405162461bcd60e51b815260206004820152601960248201527f4e6f20706c617965727320696e20746865206c6f747465727900000000000000604482015260640161013c565b6003546000906101a2610442565b6101ac919061050b565b90506000600382815481106101c3576101c361052d565b600091825260208220015481546040516370a0823160e01b81523060048201526001600160a01b0392831694509116906370a0823190602401602060405180830381865afa158015610219573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061023d9190610543565b60005460405163a9059cbb60e01b81526001600160a01b0385811660048301526024820184905292935091169063a9059cbb906044016020604051808303816000875af1158015610292573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b6919061055c565b6102f45760405162461bcd60e51b815260206004820152600f60248201526e151c985b9cd9995c8819985a5b1959608a1b604482015260640161013c565b604080516000815260208101918290525161031191600391610478565b50505050565b6000546002546040516323b872dd60e01b815233600482015230602482015260448101919091526001600160a01b03909116906323b872dd906064016020604051808303816000875af1158015610372573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610396919061055c565b6103d45760405162461bcd60e51b815260206004820152600f60248201526e151c985b9cd9995c8819985a5b1959608a1b604482015260640161013c565b600380546001810182556000919091527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b0180546001600160a01b03191633179055565b6003818154811061042857600080fd5b6000918252602090912001546001600160a01b0316905081565b60004442600360405160200161045a93929190610585565b6040516020818303038152906040528051906020012060001c905090565b8280548282559060005260206000209081019282156104cd579160200282015b828111156104cd57825182546001600160a01b0319166001600160a01b03909116178255602090920191600190910190610498565b506104d99291506104dd565b5090565b5b808211156104d957600081556001016104de565b60006020828403121561050457600080fd5b5035919050565b60008261052857634e487b7160e01b600052601260045260246000fd5b500690565b634e487b7160e01b600052603260045260246000fd5b60006020828403121561055557600080fd5b5051919050565b60006020828403121561056e57600080fd5b8151801515811461057e57600080fd5b9392505050565b838152600060208481840152604083018454856000528260002060005b828110156105c75781546001600160a01b0316845292840192600191820191016105a2565b50919897505050505050505056fea26469706673582212200ac9e93d4ecb4e53420ac7e7f3b2b877f44a2d539ff21ab951420bf5b767f75a64736f6c63430008140033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80631209b1f6146100675780635d495aea14610083578063edca914c1461008d578063f71d96cb14610095578063f851a440146100c0578063fc0c546a146100d3575b600080fd5b61007060025481565b6040519081526020015b60405180910390f35b61008b6100e6565b005b61008b610317565b6100a86100a33660046104f2565b610418565b6040516001600160a01b03909116815260200161007a565b6001546100a8906001600160a01b031681565b6000546100a8906001600160a01b031681565b6001546001600160a01b031633146101455760405162461bcd60e51b815260206004820152601860248201527f4f6e6c792061646d696e2063616e2063616c6c2074686973000000000000000060448201526064015b60405180910390fd5b6003546101945760405162461bcd60e51b815260206004820152601960248201527f4e6f20706c617965727320696e20746865206c6f747465727900000000000000604482015260640161013c565b6003546000906101a2610442565b6101ac919061050b565b90506000600382815481106101c3576101c361052d565b600091825260208220015481546040516370a0823160e01b81523060048201526001600160a01b0392831694509116906370a0823190602401602060405180830381865afa158015610219573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061023d9190610543565b60005460405163a9059cbb60e01b81526001600160a01b0385811660048301526024820184905292935091169063a9059cbb906044016020604051808303816000875af1158015610292573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b6919061055c565b6102f45760405162461bcd60e51b815260206004820152600f60248201526e151c985b9cd9995c8819985a5b1959608a1b604482015260640161013c565b604080516000815260208101918290525161031191600391610478565b50505050565b6000546002546040516323b872dd60e01b815233600482015230602482015260448101919091526001600160a01b03909116906323b872dd906064016020604051808303816000875af1158015610372573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610396919061055c565b6103d45760405162461bcd60e51b815260206004820152600f60248201526e151c985b9cd9995c8819985a5b1959608a1b604482015260640161013c565b600380546001810182556000919091527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b0180546001600160a01b03191633179055565b6003818154811061042857600080fd5b6000918252602090912001546001600160a01b0316905081565b60004442600360405160200161045a93929190610585565b6040516020818303038152906040528051906020012060001c905090565b8280548282559060005260206000209081019282156104cd579160200282015b828111156104cd57825182546001600160a01b0319166001600160a01b03909116178255602090920191600190910190610498565b506104d99291506104dd565b5090565b5b808211156104d957600081556001016104de565b60006020828403121561050457600080fd5b5035919050565b60008261052857634e487b7160e01b600052601260045260246000fd5b500690565b634e487b7160e01b600052603260045260246000fd5b60006020828403121561055557600080fd5b5051919050565b60006020828403121561056e57600080fd5b8151801515811461057e57600080fd5b9392505050565b838152600060208481840152604083018454856000528260002060005b828110156105c75781546001600160a01b0316845292840192600191820191016105a2565b50919897505050505050505056fea26469706673582212200ac9e93d4ecb4e53420ac7e7f3b2b877f44a2d539ff21ab951420bf5b767f75a64736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 83,
+        "contract": "contracts/KadiLottery.sol:KadiLottery",
+        "label": "token",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(IERC20)77"
+      },
+      {
+        "astId": 85,
+        "contract": "contracts/KadiLottery.sol:KadiLottery",
+        "label": "admin",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 87,
+        "contract": "contracts/KadiLottery.sol:KadiLottery",
+        "label": "ticketPrice",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 90,
+        "contract": "contracts/KadiLottery.sol:KadiLottery",
+        "label": "players",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_array(t_address)dyn_storage"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IERC20)77": {
+        "encoding": "inplace",
+        "label": "contract IERC20",
+        "numberOfBytes": "20"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
