@@ -38,8 +38,9 @@
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
     "@types/react": "^18.3.5",
+    "hardhat": "^2.22.12",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^15.2.10"
   },
   "engines": {
     "node": ">=18.17.0"
@@ -48,6 +49,9 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "ethers": "^6.13.2",
     "framer-motion": "^11.5.6"
   }
 }
