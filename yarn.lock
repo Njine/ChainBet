@@ -3657,7 +3657,6 @@ __metadata:
     "@nomicfoundation/hardhat-network-helpers": ^1.0.6
     "@nomicfoundation/hardhat-verify": ^2.0.3
     "@nomiclabs/hardhat-ethers": ^2.2.3
-    "@nomiclabs/hardhat-etherscan": ^3.1.8
     "@openzeppelin/contracts": ^4.8.1
     "@typechain/ethers-v5": ^10.1.0
     "@typechain/ethers-v6": ^0.5.1
@@ -3669,7 +3668,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": latest
     "@typescript-eslint/parser": latest
     chai: ^4.3.6
-    dotenv: ^16.0.3
+    dotenv: ^16.4.5
     envfile: ^6.18.0
     eslint: ^8.26.0
     eslint-config-prettier: ^8.5.0
@@ -7696,7 +7695,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.3":
+"dotenv@npm:^16.4.5":
   version: 16.4.5
   resolution: "dotenv@npm:16.4.5"
   checksum: 301a12c3d44fd49888b74eb9ccf9f07a1f5df43f489e7fcb89647a2edcd84c42d6bc349dc8df099cd18f07c35c7b04685c1a4f3e6a6a9e6b30f8d48c15b7f49c
@@ -14154,7 +14153,6 @@ __metadata:
     "@chakra-ui/react": ^2.8.2
     "@emotion/react": ^11.13.3
     "@emotion/styled": ^11.13.0
-    "@nomiclabs/hardhat-ethers": ^2.2.3
     "@nomiclabs/hardhat-etherscan": ^3.1.8
     "@types/react": ^18.3.5
     ethers: ^6.13.2

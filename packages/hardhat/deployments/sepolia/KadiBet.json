@@ -1,0 +1,189 @@
+{
+  "address": "0xD0bf306870B7d22d4d10ED77A674f92930748358",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "winner",
+          "type": "address"
+        }
+      ],
+      "name": "determineWinner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "placeBet",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "playerAddresses",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "players",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "playerAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "betAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalBetAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x1457eb6412a4a757f2ebeedcdd6026d0c8caf0847ef60652ab204e28776b5443",
+  "receipt": {
+    "to": null,
+    "from": "0x061E8199839100D0A03B2962AcEf71d721F5abd4",
+    "contractAddress": "0xD0bf306870B7d22d4d10ED77A674f92930748358",
+    "transactionIndex": 43,
+    "gasUsed": "248258",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x06083806390ca2fea547199bc39e614610bb8a9f13c03f538bbb7bd9904f76da",
+    "transactionHash": "0x1457eb6412a4a757f2ebeedcdd6026d0c8caf0847ef60652ab204e28776b5443",
+    "logs": [],
+    "blockNumber": 6758358,
+    "cumulativeGasUsed": "17164505",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "161527dabc6e1fa10b4f5e4f86b67a8a",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"}],\"name\":\"determineWinner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"placeBet\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"playerAddresses\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"players\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"playerAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"betAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalBetAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/kadiBet.sol\":\"KadiBet\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/kadiBet.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\ncontract KadiBet {\\n    struct Player {\\n        address playerAddress;\\n        uint256 betAmount;\\n    }\\n\\n    mapping(address => Player) public players;\\n    address[] public playerAddresses;\\n    uint256 public totalBetAmount;\\n\\n    // Bet function\\n    function placeBet() public payable {\\n        require(msg.value > 0, \\\"Place a valid bet.\\\");\\n        players[msg.sender] = Player(msg.sender, msg.value);\\n        playerAddresses.push(msg.sender);\\n        totalBetAmount += msg.value;\\n    }\\n\\n    // Logic to determine the winner and distribute funds\\n    function determineWinner(address winner) public {\\n        require(players[winner].playerAddress != address(0), \\\"Invalid winner.\\\");\\n        // Winner receives the entire bet amount\\n        payable(winner).transfer(totalBetAmount);\\n        totalBetAmount = 0;\\n    }\\n}\\n\",\"keccak256\":\"0xcfa6e7d9cb54568a188e38bb59e509d8bb45e7bc8008234a9cd553cabe7ec57f\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610387806100206000396000f3fe60806040526004361061004a5760003560e01c806306c565301461004f57806315c6aee214610071578063613f4594146100ae578063e2eb41ff146100d2578063f90f456014610131575b600080fd5b34801561005b57600080fd5b5061006f61006a3660046102e1565b610139565b005b34801561007d57600080fd5b5061009161008c366004610311565b6101d7565b6040516001600160a01b0390911681526020015b60405180910390f35b3480156100ba57600080fd5b506100c460025481565b6040519081526020016100a5565b3480156100de57600080fd5b506101126100ed3660046102e1565b600060208190529081526040902080546001909101546001600160a01b039091169082565b604080516001600160a01b0390931683526020830191909152016100a5565b61006f610201565b6001600160a01b03818116600090815260208190526040902054166101975760405162461bcd60e51b815260206004820152600f60248201526e24b73b30b634b2103bb4b73732b91760891b60448201526064015b60405180910390fd5b6002546040516001600160a01b0383169180156108fc02916000818181858888f193505050501580156101ce573d6000803e3d6000fd5b50506000600255565b600181815481106101e757600080fd5b6000918252602090912001546001600160a01b0316905081565b600034116102465760405162461bcd60e51b8152602060048201526012602482015271283630b1b29030903b30b634b2103132ba1760711b604482015260640161018e565b60408051808201825233808252346020808401828152600084815291829052948120935184546001600160a01b03919091166001600160a01b03199182161785559451600194850155835480850185559381527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf69093018054909416909117909255600280549091906102da90849061032a565b9091555050565b6000602082840312156102f357600080fd5b81356001600160a01b038116811461030a57600080fd5b9392505050565b60006020828403121561032357600080fd5b5035919050565b8082018082111561034b57634e487b7160e01b600052601160045260246000fd5b9291505056fea26469706673582212203870a053f3cfb433c293877519d1a55671248fc42ae6dbebde6044205458421e64736f6c63430008140033",
+  "deployedBytecode": "0x60806040526004361061004a5760003560e01c806306c565301461004f57806315c6aee214610071578063613f4594146100ae578063e2eb41ff146100d2578063f90f456014610131575b600080fd5b34801561005b57600080fd5b5061006f61006a3660046102e1565b610139565b005b34801561007d57600080fd5b5061009161008c366004610311565b6101d7565b6040516001600160a01b0390911681526020015b60405180910390f35b3480156100ba57600080fd5b506100c460025481565b6040519081526020016100a5565b3480156100de57600080fd5b506101126100ed3660046102e1565b600060208190529081526040902080546001909101546001600160a01b039091169082565b604080516001600160a01b0390931683526020830191909152016100a5565b61006f610201565b6001600160a01b03818116600090815260208190526040902054166101975760405162461bcd60e51b815260206004820152600f60248201526e24b73b30b634b2103bb4b73732b91760891b60448201526064015b60405180910390fd5b6002546040516001600160a01b0383169180156108fc02916000818181858888f193505050501580156101ce573d6000803e3d6000fd5b50506000600255565b600181815481106101e757600080fd5b6000918252602090912001546001600160a01b0316905081565b600034116102465760405162461bcd60e51b8152602060048201526012602482015271283630b1b29030903b30b634b2103132ba1760711b604482015260640161018e565b60408051808201825233808252346020808401828152600084815291829052948120935184546001600160a01b03919091166001600160a01b03199182161785559451600194850155835480850185559381527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf69093018054909416909117909255600280549091906102da90849061032a565b9091555050565b6000602082840312156102f357600080fd5b81356001600160a01b038116811461030a57600080fd5b9392505050565b60006020828403121561032357600080fd5b5035919050565b8082018082111561034b57634e487b7160e01b600052601160045260246000fd5b9291505056fea26469706673582212203870a053f3cfb433c293877519d1a55671248fc42ae6dbebde6044205458421e64736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3483,
+        "contract": "contracts/kadiBet.sol:KadiBet",
+        "label": "players",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_struct(Player)3478_storage)"
+      },
+      {
+        "astId": 3486,
+        "contract": "contracts/kadiBet.sol:KadiBet",
+        "label": "playerAddresses",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 3488,
+        "contract": "contracts/kadiBet.sol:KadiBet",
+        "label": "totalBetAmount",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_struct(Player)3478_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct KadiBet.Player)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Player)3478_storage"
+      },
+      "t_struct(Player)3478_storage": {
+        "encoding": "inplace",
+        "label": "struct KadiBet.Player",
+        "members": [
+          {
+            "astId": 3475,
+            "contract": "contracts/kadiBet.sol:KadiBet",
+            "label": "playerAddress",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 3477,
+            "contract": "contracts/kadiBet.sol:KadiBet",
+            "label": "betAmount",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-contract almasiToken is ERC20 {
+contract AlmasiToken is ERC20 {
     address public admin;
     uint256 public fee = 35; // 3.5% administrative fee
 

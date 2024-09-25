@@ -30,7 +30,7 @@ contract KadiLottery {
     }
 
     function random() private view returns (uint256) {
-        return uint256(keccak256(abi.encodePacked(block.difficulty, block.timestamp, players)));
+        return uint256(keccak256(abi.encodePacked(block.prevrandao, block.timestamp, players)));
     }
 
     modifier onlyAdmin() {

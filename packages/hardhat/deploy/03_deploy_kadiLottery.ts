@@ -6,13 +6,13 @@ const deployLottery: DeployFunction = async ({ getNamedAccounts, deployments }: 
   const { deployer } = await getNamedAccounts();
 
   // Deploy the LotteryToken contract
-  const token = await deploy("almasiToken", {
+  const token = await deploy("AlmasiToken", {
     from: deployer,
     log: true,
   });
 
   // Deploy the Lottery contract with LotteryToken address
-  await deploy("Lottery", {
+  await deploy("KadiLottery", {
     from: deployer,
     args: [token.address, 100, 10], // Adjust the constructor arguments
     log: true,
